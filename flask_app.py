@@ -22,7 +22,7 @@ class Game():
 
     # The objects that will be compared in the game
     elements = [Higher('Eiffel Tower', 'ET', 324, 'https://images.unsplash.com/photo-1431274172761-fca41d930114'),
-                Higher('Burg Khalifa', 'BK', 828, 'https://images.unsplash.com/photo-1538230947319-933cfa9486ea'),
+                Higher('Burj Khalifa', 'BK', 828, 'https://images.unsplash.com/photo-1538230947319-933cfa9486ea'),
                 Higher('One World Trade Center', 'WT', 541, 'https://images.unsplash.com/photo-1541867391205-ea609f8c8750'),
                 Higher('Taipei 101', 'TP', 508, 'https://images.unsplash.com/photo-1548859432-e64efebfdc00'),
                 Higher('Petronas Towers', 'PT', 452, 'https://images.unsplash.com/photo-1472017053394-b29fded587cd'),
