@@ -4,30 +4,25 @@
         color: #FBEEC1;
         font-family: arial, sans-serif;}
     #main_body{background:white;
-        color:black;
-        width:500px;
-        display:inline-block;}
+        color:black;}
     .center_wrapper{
         width:100%;
         text-align:center;}
+    .center_wrapper div{
+        display:inline-block;
+        width:500px;}
     #answer_wrapper{
         display:flex;
         flex-direction:row;
         justify-content: space-around;}
+    .answer{
+        width:200px;
+        padding: 25px;
+        display:flex;
+        flex-direction:column;}
     #left_answer{
-        float:left;
-        width:200px;
-        padding: 25px;
-        display:flex;
-        flex-direction:column;}
-    #right_answer{
-        width:200px;
-        padding: 25px;
-        display:flex;
-        flex-direction:column;}
+        float:left;}
     #response{
-        display:inline-block;
-        width:500px;
 {% if response %}
   {% if response.positive %}
         background-color:green;
@@ -57,11 +52,11 @@
 
 <form action='/answer' method='POST'>
 <div id='answer_wrapper'>
-    <div id='left_answer'>
+    <div class='answer' id='left_answer'>
         <input type='image' name='{{a1.correct}}' src='{{a1.image}}' width='200pxl' /><br />
         <input type='submit' name='{{a1.correct}}' value='{{a1.name}}'/>
     </div>
-    <div id='right_answer'>
+    <div class='answer'>
         <input type='image' name='{{a2.correct}}' src='{{a2.image}}' width='200pxl' /><br />
         <input type='submit' name='{{a2.correct}}' value='{{a2.name}}' />
     </div>
