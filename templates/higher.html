@@ -1,36 +1,12 @@
 <title>What is higher?</title>
-<style type='text/css' >
-    body{background:#659DBD;
-        color: #FBEEC1;
-        font-family: arial, sans-serif;}
-    #main_body{background:white;
-        color:black;}
-    .center_wrapper{
-        width:100%;
-        text-align:center;}
-    .center_wrapper div{
-        display:inline-block;
-        width:500px;}
-    #answer_wrapper{
-        display:flex;
-        flex-direction:row;
-        justify-content: space-around;}
-    .answer{
-        width:200px;
-        padding: 25px;
-        display:flex;
-        flex-direction:column;}
-    #left_answer{
-        float:left;}
-    #response{
+<link rel="stylesheet" href="/static/styles/main.css" type="text/css" >
 {% if response %}
   {% if response.positive %}
-        background-color:green;
+    <link rel="stylesheet" href="/static/styles/correct.css" type="text/css" >
   {% else %}
-        background-color:red;
+    <link rel="stylesheet" href="/static/styles/incorrect.css" type="text/css" >
   {% endif %}
 {% endif %}
-        }
 </style>
 
 {% if debug %}

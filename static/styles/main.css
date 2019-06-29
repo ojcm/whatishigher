@@ -1,0 +1,22 @@
+body{background:#659DBD;
+    color: #FBEEC1;
+    font-family: arial, sans-serif;}
+#main_body{background:white;
+    color:black;}
+.center_wrapper{
+    width:100%;
+    text-align:center;}
+.center_wrapper div{
+    display:inline-block;
+    width:500px;}
+#answer_wrapper{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;}
+.answer{
+    width:200px;
+    padding: 25px;
+    display:flex;
+    flex-direction:column;}
+#left_answer{
+    float:left;}
