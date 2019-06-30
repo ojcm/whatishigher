@@ -6,7 +6,7 @@ body{background:#659DBD;
 .center_wrapper{
     width:100%;
     text-align:center;}
-.center_wrapper div{
+.center_wrapper > div{
     display:inline-block;
     width:500px;}
 #answer_wrapper{

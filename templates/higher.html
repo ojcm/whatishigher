@@ -26,16 +26,19 @@
 <h1>What is higher?</h1>
 
 
-<form action='/answer' method='POST'>
 <div id='answer_wrapper'>
+  <form action='/answer?answer={{a1.short_name}}&other={{a2.short_name}}' method='POST'>
     <div class='answer' id='left_answer'>
-        <input type='image' name='{{a1.correct}}' src='{{a1.image}}' width='200pxl' /><br />
-        <input type='submit' name='{{a1.correct}}' value='{{a1.name}}'/>
+        <input type='image' src='{{a1.image}}' width='200pxl' /><br />
+        <input type='submit' value='{{a1.name}}'/>
     </div>
+  </form>
+  <form action='/answer?answer={{a2.short_name}}&other={{a1.short_name}}' method='POST'>
     <div class='answer'>
-        <input type='image' name='{{a2.correct}}' src='{{a2.image}}' width='200pxl' /><br />
-        <input type='submit' name='{{a2.correct}}' value='{{a2.name}}' />
+        <input type='image' src='{{a2.image}}' width='200pxl' /><br />
+        <input type='submit' value='{{a2.name}}' />
     </div>
+  </form>
 </div>
 </form>
 </div>
