@@ -1,46 +1,50 @@
 <title>What is higher?</title>
 <link rel="stylesheet" href="/static/styles/main.css" type="text/css" >
-{% if response %}
-  {% if response.positive %}
-    <link rel="stylesheet" href="/static/styles/correct.css" type="text/css" >
-  {% else %}
-    <link rel="stylesheet" href="/static/styles/incorrect.css" type="text/css" >
-  {% endif %}
-{% endif %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
 </style>
 
 {% if debug %}
 <p>{{debug}}</p>
 {% endif %}
 
-<div class='center_wrapper'>
-<div id='response'>
-{% if response %}
-  <h1>{{response.text}}</h1>
-{% endif %}
-</div>
+<div class="center_wrapper">
+  {% if response %}
+    {% if response.positive %}
+  <div class="ui inverted green center aligned segment">
+    {% else %}
+  <div class="ui inverted red center aligned segment">
+    {% endif %}
+      <h1 class="ui header">{{response.text}}</h1>
+  {% endif %}
+  </div>
 </div>
 
 <div class='center_wrapper'>
-<div id='main_body' >
-<h1>What is higher?</h1>
+  <div id='main_body'>
+    <h1 class="ui header">What is higher?</h1>
 
-
-<div id='answer_wrapper'>
-  <form action='/answer?answer={{a1.short_name}}&other={{a2.short_name}}' method='POST'>
-    <div class='answer' id='left_answer'>
-        <input type='image' src='{{a1.image}}' width='200pxl' /><br />
-        <input type='submit' value='{{a1.name}}'/>
+    <div class="ui two column grid container">
+      <div class="column">
+        <form id="left_form" action='/answer?answer={{a1.short_name}}&other={{a2.short_name}}' method='POST'>
+          <a href="#" onclick="document.getElementById('left_form').submit();" >
+            <div class='ui attached segment'>
+                <img class="ui fluid image" src='{{a1.image}}' width='200pxl' /><br />
+            </div>
+            <div class="ui bottom attached primary button">{{a1.name}}</div>
+          </a>
+        </form>
+      </div>
+      <div class="column">
+        <form id="right_form" action='/answer?answer={{a2.short_name}}&other={{a1.short_name}}' method='POST'>
+          <a href="#" onclick="document.getElementById('right_form').submit();" >
+            <div class='ui attached segment'>
+                <img class="ui fluid image" src='{{a2.image}}' width='200pxl' /><br />
+            </div>
+            <div class="ui bottom attached primary button">{{a2.name}}</div>
+          </a>
+        </form>
+      </div>
     </div>
-  </form>
-  <form action='/answer?answer={{a2.short_name}}&other={{a1.short_name}}' method='POST'>
-    <div class='answer'>
-        <input type='image' src='{{a2.image}}' width='200pxl' /><br />
-        <input type='submit' value='{{a2.name}}' />
-    </div>
-  </form>
-</div>
-</form>
-</div>
+  </div>
 </div>
 </form>
